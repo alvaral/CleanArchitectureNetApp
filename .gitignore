@@ -1,0 +1,83 @@
+# Build directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# Backup & generated files
+*.bak
+*.swp
+*.tmp
+*.temp
+~$*
+
+# Dependency directories
+packages/
+node_modules/
+
+# Publish output
+wwwroot/
+out/
+
+# Database
+*.mdf
+*.ldf
+
+# Configuration files
+appsettings*.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Resharper settings
+_ReSharper*/
+*.DotSettings.user
+
+# Git settings
+*.orig
+
+# Coverage
+*.coverage
+*.coveragejson
+coverage/
+TestResults/
+
+# Azure Pipelines
+*.azure-pipelines.yml
+!.azure-pipelines/
+
+# NCrunch
+.ncrunchsolution
+.ncrunchproject
+
+# SQL Server Management Studio
+*.sqlproj.user
+
+# Global JetBrains Rider config
+/.idea/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Visual Studio workspace databases
+.vs/
+
+# Rider project files
+.idea/
