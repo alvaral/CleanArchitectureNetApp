@@ -15,12 +15,12 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.CreateStream
 
     internal class CreateStreamerCommandHandler : IRequestHandler<CreateStreamerCommand, int>
     {
-        private readonly IStreamerRepository _streamerRepository;
+        private readonly IVideoRepository _streamerRepository;
         private IMapper _mapper;
         private readonly IEmailService _emailservice;
         private readonly ILogger<CreateStreamerCommandHandler> _logger;
 
-        public CreateStreamerCommandHandler(IStreamerRepository streamerRepository, IMapper mapper, IEmailService emailservice, ILogger<CreateStreamerCommandHandler> logger)
+        public CreateStreamerCommandHandler(IVideoRepository streamerRepository, IMapper mapper, IEmailService emailservice, ILogger<CreateStreamerCommandHandler> logger)
         {
             _streamerRepository = streamerRepository;
             _mapper = mapper;

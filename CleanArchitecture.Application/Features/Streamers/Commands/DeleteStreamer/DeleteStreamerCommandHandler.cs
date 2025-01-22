@@ -14,11 +14,11 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.DeleteStream
 {
     public class DeleteStreamerCommandHandler : IRequestHandler<DeleteStreamerCommand>
     {
-        private readonly IStreamerRepository _streamerRepository;
+        private readonly IVideoRepository _streamerRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<DeleteStreamerCommandHandler> _logger;
 
-        public DeleteStreamerCommandHandler(IStreamerRepository streamerRepository,
+        public DeleteStreamerCommandHandler(IVideoRepository streamerRepository,
                                             IMapper mapper,
                                             ILogger<DeleteStreamerCommandHandler> logger)
         {
