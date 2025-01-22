@@ -20,7 +20,7 @@ namespace CleanArchitecture.API.Controllers
         [ProducesResponseType(typeof(IEnumerable<VideosVm>), (int) HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<VideosVm>>> GetVideosByUsername(string username)
         {
-            var query = new GetsVideosListQuery(username);
+            var query = new GetVideosListQuery(username);
             var videos = await _mediator.Send(query);
             return Ok(videos);
         }

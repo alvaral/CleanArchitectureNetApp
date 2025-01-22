@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using CleanArchitecture.Application.Contracts.Infrastructure;
 using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Features.Streamers.Commands.CreateStreamer;
+
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchitecture.Application.Features.Streamers.Commands.CreateStreamer
+namespace CleanArchitecture.Application.Features.Streamers.Commands
 {
-
-    internal class CreateStreamerCommandHandler : IRequestHandler<CreateStreamerCommand, int>
+    public class CreateStreamerCommandHandler : IRequestHandler<CreateStreamerCommand, int>
     {
-        private readonly IVideoRepository _streamerRepository;
-        private IMapper _mapper;
+        private readonly IStreamerRepository _streamerRepository;
+        private readonly IMapper _mapper;
         private readonly IEmailService _emailservice;
         private readonly ILogger<CreateStreamerCommandHandler> _logger;
 
-        public CreateStreamerCommandHandler(IVideoRepository streamerRepository, IMapper mapper, IEmailService emailservice, ILogger<CreateStreamerCommandHandler> logger)
+        public CreateStreamerCommandHandler(IStreamerRepository streamerRepository, IMapper mapper, IEmailService emailservice, ILogger<CreateStreamerCommandHandler> logger)
         {
             _streamerRepository = streamerRepository;
             _mapper = mapper;
@@ -33,7 +29,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.CreateStream
             var streamerEntity = _mapper.Map<Streamer>(request);
             var newStreamer = await _streamerRepository.AddAsync(streamerEntity);
 
-            _logger.LogInformation($"Streamer {newStreamer.Id} fue creado exitosamente.");
+            _logger.LogInformation($"Streamer {newStreamer.Id} fue creado existosamente");
 
             await SendEmail(newStreamer);
 
@@ -45,8 +41,8 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.CreateStream
             var email = new Email
             {
                 To = "vaxi.drez.social@gmail.com",
-                Body = "La compañia de streamer se creó correctamente",
-                Subject = "Mensaje de alerta",
+                Body = "La compania de streamer se creo correctamente",
+                Subject = "Mensaje de alerta"
             };
 
             try
@@ -55,8 +51,10 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.CreateStream
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Error al enviar el email de {streamer.Id}");
+                _logger.LogError($"Errores enviando el email de {streamer.Id}");
             }
+
         }
+
     }
 }

@@ -4,18 +4,18 @@ using MediatR;
 
 namespace CleanArchitecture.Application.Features.Videos.Queries.GetVideosList
 {
-    public class GetsVideosListQueryHandler : IRequestHandler<GetsVideosListQuery, List<VideosVm>>
+    public class GetVideosListQueryHandler : IRequestHandler<GetVideosListQuery, List<VideosVm>>
     {
         private readonly IVideoRepository _videoRepository;
         private readonly IMapper _mapper;
 
-        public GetsVideosListQueryHandler(IVideoRepository videoRepository, IMapper mapper)
+        public GetVideosListQueryHandler(IVideoRepository videoRepository, IMapper mapper)
         {
             _videoRepository = videoRepository;
             _mapper = mapper;
         }
 
-        public async Task<List<VideosVm>> Handle(GetsVideosListQuery request, CancellationToken cancellationToken)
+        public async Task<List<VideosVm>> Handle(GetVideosListQuery request, CancellationToken cancellationToken)
         {
             var videoList = await _videoRepository.GetVideoByUsername(request._Username);
 
