@@ -1,6 +1,7 @@
 ﻿
 using CleanArchitecture.Application.Contracts.Infrastructure;
 using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Models;
 using CleanArchitecture.Domain;
 using CleanArchitecture.Infrastructure.Email;
 using CleanArchitecture.Infrastructure.Persistence;

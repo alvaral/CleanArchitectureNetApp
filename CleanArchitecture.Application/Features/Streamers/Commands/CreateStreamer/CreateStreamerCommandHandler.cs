@@ -2,10 +2,13 @@
 using CleanArchitecture.Application.Contracts.Infrastructure;
 using CleanArchitecture.Application.Contracts.Persistance;
 using CleanArchitecture.Application.Features.Streamers.Commands.CreateStreamer;
-
+using CleanArchitecture.Application.Models;
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
+
+using Email = CleanArchitecture.Application.Models.Email;
+
 
 namespace CleanArchitecture.Application.Features.Streamers.Commands
 {

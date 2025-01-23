@@ -1,9 +1,9 @@
-﻿using CleanArchitecture.Domain;
+﻿using CleanArchitecture.Application.Models;
 
 namespace CleanArchitecture.Application.Contracts.Infrastructure
 {
     public interface IEmailService
     {
-        Task<bool> SendEmail(Email email);
+        Task<bool> SendEmail(Application.Models.Email email);
     }
 }
