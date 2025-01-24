@@ -1,8 +1,9 @@
 ﻿
 
 using AutoMapper;
-using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Exceptions;
+using CleanArchitecture.Application.Features.Streamers.Commands.DeleteStreamer;
 using CleanArchitecture.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,7 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.UpdateStream
 
         public UpdateStreamerCommandHandler(IUnitOfWork unitOfWork,
                                             IMapper mapper,
+                                            Contracts.Infrastructure.IEmailService @object,
                                             ILogger<UpdateStreamerCommandHandler> logger)
         {
             //_streamerRepository = streamerRepository;

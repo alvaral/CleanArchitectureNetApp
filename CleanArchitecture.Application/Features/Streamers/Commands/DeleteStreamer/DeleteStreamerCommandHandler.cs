@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using CleanArchitecture.Application.Contracts.Persistance;
+﻿using AutoMapper;
+using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Exceptions;
 using CleanArchitecture.Domain;
 using MediatR;
@@ -14,8 +9,8 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.DeleteStream
 {
     public class DeleteStreamerCommandHandler : IRequestHandler<DeleteStreamerCommand>
     {
-        //private readonly IVideoRepository _streamerRepository;
         private readonly IUnitOfWork _unitOfWork;
+        //private readonly IStreamerRepository _streamerRepository;
         private readonly IMapper _mapper;
         private readonly ILogger<DeleteStreamerCommandHandler> _logger;
 
@@ -23,17 +18,17 @@ namespace CleanArchitecture.Application.Features.Streamers.Commands.DeleteStream
                                             IMapper mapper,
                                             ILogger<DeleteStreamerCommandHandler> logger)
         {
-            _unitOfWork = unitOfWork;
             //_streamerRepository = streamerRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
             _logger = logger;
         }
 
         public async Task<Unit> Handle(DeleteStreamerCommand request, CancellationToken cancellationToken)
         {
-            //var streamertodelete = await _streamerrepository.getbyidasync(request.id);
             var streamerToDelete = await _unitOfWork.StreamerRepository.GetByIdAsync(request.Id);
-            if (streamerToDelete == null) {
+            if (streamerToDelete == null)
+            {
                 _logger.LogError($"{request.Id} streamer no existe en el sistema");
                 throw new NotFoundException(nameof(Streamer), request.Id);
             }
