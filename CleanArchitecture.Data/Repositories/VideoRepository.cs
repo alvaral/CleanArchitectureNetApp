@@ -1,5 +1,5 @@
 ﻿
-using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Domain;
 using CleanArchitecture.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;

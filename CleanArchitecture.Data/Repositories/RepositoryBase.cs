@@ -1,7 +1,7 @@
 ﻿
 
 using System.Linq.Expressions;
-using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Domain.Common;
 using CleanArchitecture.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;

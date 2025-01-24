@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchitecture.Application.Contracts.Infrastructure;
-using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Contracts.Persistence;
 using CleanArchitecture.Application.Features.Streamers.Commands.CreateStreamer;
 using CleanArchitecture.Application.Models;
 using CleanArchitecture.Domain;

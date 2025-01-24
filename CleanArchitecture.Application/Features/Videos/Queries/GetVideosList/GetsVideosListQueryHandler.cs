@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using CleanArchitecture.Application.Contracts.Persistance;
+using CleanArchitecture.Application.Contracts.Persistence;
 using MediatR;
 
 namespace CleanArchitecture.Application.Features.Videos.Queries.GetVideosList
