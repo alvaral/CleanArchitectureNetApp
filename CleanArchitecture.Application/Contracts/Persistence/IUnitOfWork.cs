@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Domain.Common;
 
-namespace CleanArchitecture.Application.Contracts.Persistance
+namespace CleanArchitecture.Application.Contracts.Persistence
 {
     public interface IUnitOfWork : IDisposable
     {

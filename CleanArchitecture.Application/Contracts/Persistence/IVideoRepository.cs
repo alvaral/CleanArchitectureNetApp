@@ -1,6 +1,6 @@
 ﻿using CleanArchitecture.Domain;
 
-namespace CleanArchitecture.Application.Contracts.Persistance
+namespace CleanArchitecture.Application.Contracts.Persistence
 {
     public interface IVideoRepository : IAsyncRepository<Video>
     {
